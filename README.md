@@ -1,1 +1,1 @@
-# tic-tac-toe - milestone_1
+# tic-tac-toe - milestone_2
