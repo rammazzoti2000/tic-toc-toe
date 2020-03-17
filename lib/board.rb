@@ -1,23 +1,27 @@
 
+require_relative '../bin/main.rb'
+
 class DisplayBoard
   @@count = 0
-  attr_accessor :display_board 
+  attr_accessor :display_board, :board
 
-  def initialize(display_board)
+  def initialize
+    @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
     @display_board = display_board
     @@count += 1
   end
 
-  def display_board(board)
-    puts "Turn #{@@count} happened.\n"
-    puts "  #{board[0]} | #{board[1]} | #{board[2]}"
-    puts " ---------------------------"
-    puts "  #{board[3]} | #{board[4]} | #{board[5]}"
-    puts " ---------------------------"
-    puts "  #{board[6]} | #{board[7]} | #{board[8]}"
+  def updating_board(num)
+    if board[index] == nil
+      board[index] = "rum"
+    else
+      "Position already taken, try an empty one"
+    end
   end
 end
 
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-game = DisplayBoard.new(board)
-puts game.display_board(board)
+
+
+
+game = DisplayBoard.new
+puts game.display_board
