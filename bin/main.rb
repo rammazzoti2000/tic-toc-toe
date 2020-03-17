@@ -1,22 +1,17 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+require_relative '../lib/position.rb'
+require_relative '../lib/players.rb'
+
 puts 'Hello World'
-
-# introduction of the game
-
 puts
-puts "Welcome to the Tic Tac Toe"
+puts "Welcome to the Tic Tac Toe. This is 2 players game"
 puts
 puts "This is the modern addaption of the Tic Tac Toe, this is to be played with \"rum\" and \"vodka\""
-
-# Taking information from the players
-puts
-puts "Two players game only"
 puts
 puts "Whoever gets a straight line wins (vertically, horizontially or diagonally). Lets Drink!" 
 puts
-print "player 1, please enter your name:- "
 
 def valid_name(player)
   while player.empty?
@@ -28,37 +23,32 @@ def valid_name(player)
   return player 
 end
 
+print "player 1, please enter your name:- "
 $player_1 = valid_name(gets.strip)
 puts
 puts "Welcome, player 1:- #{$player_1}"
 puts
-print "player 2, please enter your name:- "
 
+print "player 2, please enter your name:- "
 $player_2 = valid_name(gets.strip)
 puts
 puts "Welcome, player 2:- #{$player_2}"
 puts
+
 rum = "rum  "
 vodka = "vodka"
-puts "#{$player_1} choose between \"rum\" or #{vodka}."
-def display_board
-  "Turn #{@@count} happened.\n"
-  "  #{board[0]} | #{board[1]} | #{board[2]}"
-  " ---------------------------"
-  "  #{board[3]} | #{board[4]} | #{board[5]}"
-  " ---------------------------"
-  "  #{board[6]} | #{board[7]} | #{board[8]}"
-end
+
+print "#{$player_1} choose between \"rum\" or \"#{vodka}\": - "
 
 player_1_drink = gets.strip.downcase 
 
 while player_1_drink
   if player_1_drink == "rum" || player_1_drink == vodka
-    player_2_drink = player_1_drink == rum ? vodka : rum;
+    player_2_drink = player_1_drink == "rum" ? vodka : rum;
     puts "#{$player_1} chose \"#{player_1_drink}\" and #{$player_2} is assigned with the \"#{player_2_drink}\""
     break
   else
-    puts "Error, Man is your liver weak? choose between #{rum} or \"#{vodka}\"."
+    puts "Error, Man is your liver weak? choose between \"rum\" or \"#{vodka}\"."
     puts player_1_drink = gets.strip
   end
 end
@@ -98,7 +88,4 @@ def display_board(board)
   puts "    #{board[6]}  |   #{board[7]}   | #{board[8]}  "
 end
 
-
-
-
-
+ p Player.new($player_1 , $player_2, player_1_drink, player_2_drink)
