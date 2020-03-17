@@ -2,18 +2,18 @@
 require_relative '../bin/main.rb'
 
 class DisplayBoard
-  @@count = 0
-  attr_accessor :display_board, :board
+  $board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+  
+
+  attr_accessor  :board
 
   def initialize
-    @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-    @display_board = display_board
-    @@count += 1
   end
 
-  def updating_board(num)
-    if board[index] == nil
-      board[index] = "rum"
+  def update_board(num)
+    if $board[num].length < 2
+      $board[num] = "rum"
+      display_board($board)
     else
       "Position already taken, try an empty one"
     end
@@ -24,4 +24,4 @@ end
 
 
 game = DisplayBoard.new
-puts game.display_board
+puts game.update_board(2)
