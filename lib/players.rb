@@ -8,6 +8,6 @@ class Player
     end
 end
 
-puts players = Player.new($player_1, $player_2)
+puts players = Player.new($layer_1, $player_2)
 puts players.player_1
 puts players.player_2
