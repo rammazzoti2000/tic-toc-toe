@@ -63,37 +63,42 @@ while player_1_drink
   end
 end
 
-def display_board
-  puts "  |  |  "
-  puts "--------"
-  puts "  |  |  "
-  puts "--------"
-  puts "  |  |  "
-end
-
-def display_board
+def board_example
+  puts
+  puts "Lets look at the examples."
+  puts
+  puts "Choose the number in the board between 1 to 9"
+  puts
+  puts "   1  |   2   |   3    "
+  puts " ---------------------- "
+  puts "   4  |   5   |   6    "
+  puts " ---------------------- "
+  puts "   7  |   8   |   9    "
+  puts
   puts " rum   |       | vodka  "
   puts " ---------------------- "
   puts " rum   | vodka |        "
   puts " ---------------------- "
   puts " vodka |       | rum    "
-
   puts
   puts "player with \"vodka\" won because got the stright line"
 end
 
 puts 
-puts display_board
+puts board_example
 
-def updating_board(board)
-  #puts "Turn #{@@count} happened.\n"
-  puts "  #{board[0]} | #{board[1]} | #{board[2]}"
-  puts " ---------------------------"
-  puts "  #{board[3]} | #{board[4]} | #{board[5]}"
-  puts " ---------------------------"
-  puts "  #{board[6]} | #{board[7]} | #{board[8]}"
+$board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+def display_board(board)
+  puts "Turn #{$count} happened.\n"
+  puts "    #{board[0]}  |   #{board[1]}   | #{board[2]}  "
+  puts " ------------------------ "
+  puts "    #{board[3]}  |   #{board[4]}   | #{board[5]}  "
+  puts " ------------------------ "
+  puts "    #{board[6]}  |   #{board[7]}   | #{board[8]}  "
 end
 
-board = ["rum  ", " ", " ", "rum  ", " ", " ", " v", " ", "vodka"]
 
-puts updating_board(board)
+
+
+
