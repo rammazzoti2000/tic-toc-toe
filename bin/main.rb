@@ -3,6 +3,8 @@
 
 require_relative '../lib/position.rb'
 require_relative '../lib/players.rb'
+require_relative '../lib/board.rb'
+
 
 puts 'Hello World'
 puts
@@ -88,4 +90,8 @@ def display_board(board)
   puts "    #{board[6]}  |   #{board[7]}   | #{board[8]}  "
 end
 
- p Player.new($player_1 , $player_2, player_1_drink, player_2_drink)
+Player.new($player_1 , $player_2, player_1_drink, player_2_drink)
+
+puts "#{switch_turn} choose a number"
+
+p Position.get_position_num

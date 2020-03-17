@@ -1,16 +1,16 @@
 class Position
-    $count = 0
+    $count = 1
     attr_accessor :get_position
 
     def initialize
-        @get_position = nil
+        #@get_position = nil
     end
  
-    def position_num
+    def self.get_position_num
         while (1..9).include?(@get_position) == false
             @get_position = gets.strip.to_i
             if (1..9).include?(@get_position)
-                @get_position
+                return @get_position
             else
                 @get_position = gets.strip.to_i
             end

@@ -1,5 +1,5 @@
-require_relative '../bin/main.rb'
-require_relative 'position.rb'
+#require_relative '../bin/main.rb'
+#require_relative 'position.rb'
 
 class DisplayBoard
   $board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
@@ -19,5 +19,5 @@ class DisplayBoard
   end
 end
 
-game = DisplayBoard.new
-puts game.update_board(2)
+# game = DisplayBoard.new
+# puts game.update_board(2)
