@@ -1,10 +1,9 @@
-
 require_relative '../bin/main.rb'
+require_relative 'position.rb'
 
 class DisplayBoard
   $board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
   
-
   attr_accessor  :board
 
   def initialize
@@ -19,9 +18,6 @@ class DisplayBoard
     end
   end
 end
-
-
-
 
 game = DisplayBoard.new
 puts game.update_board(2)

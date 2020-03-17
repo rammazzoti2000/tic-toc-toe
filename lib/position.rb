@@ -4,7 +4,6 @@ class Position
 
     def initialize
         @get_position = nil
-        $count += 1
     end
  
     def position_num
@@ -20,5 +19,5 @@ class Position
 end
 
 
-geg = Position.new
-puts geg.position_num
+# geg = Position.new
+# puts geg.position_num
