@@ -41,10 +41,16 @@ puts
 rum = "rum  "
 vodka = "vodka"
 puts "#{$player_1} choose between \"rum\" or #{vodka}."
+def display_board
+  "Turn #{@@count} happened.\n"
+  "  #{board[0]} | #{board[1]} | #{board[2]}"
+  " ---------------------------"
+  "  #{board[3]} | #{board[4]} | #{board[5]}"
+  " ---------------------------"
+  "  #{board[6]} | #{board[7]} | #{board[8]}"
+end
 
-puts
-
-player_1_drink = gets.strip.downcase
+player_1_drink = gets.strip.downcase 
 
 while player_1_drink
   if player_1_drink == "rum" || player_1_drink == vodka
@@ -72,10 +78,22 @@ def display_board
   puts " ---------------------- "
   puts " vodka |       | rum    "
 
+  puts
   puts "player with \"vodka\" won because got the stright line"
 end
 
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-
 puts 
 puts display_board
+
+def updating_board(board)
+  #puts "Turn #{@@count} happened.\n"
+  puts "  #{board[0]} | #{board[1]} | #{board[2]}"
+  puts " ---------------------------"
+  puts "  #{board[3]} | #{board[4]} | #{board[5]}"
+  puts " ---------------------------"
+  puts "  #{board[6]} | #{board[7]} | #{board[8]}"
+end
+
+board = ["rum  ", " ", " ", "rum  ", " ", " ", " v", " ", "vodka"]
+
+puts updating_board(board)
