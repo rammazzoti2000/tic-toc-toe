@@ -1,7 +1,7 @@
 require_relative './players.rb'
 
 class Position < Player
-  attr_accessor :get_position
+  attr_writer :get_position
 
   def self.get_position_num
     while Player.board.include?(' ')

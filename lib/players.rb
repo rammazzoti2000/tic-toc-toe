@@ -1,17 +1,17 @@
 class Player
-  attr_reader :player_1, :player_2, :player_1_drink, :player_2_drink
+  attr_reader :player1, :player_2, :player1_drink, :player_2_drink
   attr_accessor :current_player, :current_drink
 
-  def initialize(player_1, player_2, player_1_drink, player_2_drink)
-    @player_1 = player_1
-    @player_2 = player_2
-    @player_1_drink = player_1_drink
-    @player_2_drink = player_2_drink
-    @current_drink = @player_2_drink
+  def initialize(player1, player_2, player1_drink, player_2_drink)
+    @player1 = player1
+    @player2 = player_2
+    @player1_drink = player1_drink
+    @player2_drink = player_2_drink
+    @current_drink = @player2_drink
   end
 
   @board = Array.new(9, ' ')
-  @current_player = @player_2
+  @current_player = @player2
   @count = 0
   @winning_positions = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -36,7 +36,7 @@ class Player
   end
 
   def self.current_drink=(*)
-    @current_drink = @player_2_drink
+    @current_drink = @player2_drink
   end
 
   def self.winning_positions
@@ -62,7 +62,7 @@ class Player
 
   def switch_turn
     Player.count += 1
-    @current_drink == @player_1_drink ? @current_drink = @player_2_drink : @current_drink = @player_1_drink
-    @current_player == @player_1 ? @current_player = @player_2 : @current_player = @player_1
+    @current_drink == @player1_drink ? @current_drink = @player2_drink : @current_drink = @player1_drink
+    @current_player == @player1 ? @current_player = @player2 : @current_player = @player1
   end
 end

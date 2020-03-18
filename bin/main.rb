@@ -20,15 +20,15 @@ def valid_name(player)
 end
 
 print 'player 1, please enter your name:- '
-@player_1 = valid_name(gets.strip)
+@player1 = valid_name(gets.strip)
 puts
-puts "Welcome, player 1:- #{@player_1}"
+puts "Welcome, player 1:- #{@player1}"
 puts
 
 print 'player 2, please enter your name:- '
-@player_2 = valid_name(gets.strip)
+@player2 = valid_name(gets.strip)
 puts
-puts "Welcome, player 2:- #{@player_2}"
+puts "Welcome, player 2:- #{@player2}"
 puts
 
 def board_example
@@ -71,26 +71,26 @@ def play
   rum = 'rum  '
   vodka = 'vodka'
 
-  print "#{@player_1} choose between \'rum\' or \'vodka\':- "
-  player_1_drink = gets.strip.downcase
+  print "#{@player1} choose between \'rum\' or \'vodka\':- "
+  player1_drink = gets.strip.downcase
 
-  while player_1_drink
-    if player_1_drink == 'rum' || player_1_drink == vodka
-      player_2_drink = player_1_drink == 'rum' ? vodka : rum
+  while player1_drink
+    if player1_drink == 'rum' || player1_drink == vodka
+      player2_drink = player1_drink == 'rum' ? vodka : rum
       puts
-      puts "\'#{@player_1}\' chose \'#{player_1_drink}\' and \'#{@player_2}\' is assigned with \'#{player_2_drink}\'"
+      puts "\'#{@player1}\' chose \'#{player1_drink}\' and \'#{@player2}\' is assigned with \'#{player2_drink}\'"
       puts
-      if player_2_drink == vodka
-        player_1_drink = rum
+      if player2_drink == vodka
+        player1_drink = rum
       end
       break
     else
       puts "Error, Man is your liver weak? choose between \'rum\' or \'#{vodka}\'."
-      puts player_1_drink = gets.strip
+      puts player1_drink = gets.strip
     end
   end
 
-  match = Player.new(@player_1, @player_2, player_1_drink, player_2_drink)
+  match = Player.new(@player1, @player2, player1_drink, player2_drink)
 
   while Player.board.include?(' ')
 
