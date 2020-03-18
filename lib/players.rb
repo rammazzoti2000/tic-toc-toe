@@ -62,7 +62,7 @@ class Player
 
   def switch_turn
     Player.counts += 1
-    @current_drink == @player1_drink ? @current_drink = @player2_drink : @current_drink = @player1_drink
-    @current_player == @player1 ? @current_player = @player2 : @current_player = @player1
+    @current_drink = @current_drink == @player1_drink ? @player2_drink : @player1_drink
+    @current_player = @current_player == @player1 ? @player2 : @player1
   end
 end
