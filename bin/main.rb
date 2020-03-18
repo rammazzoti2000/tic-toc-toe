@@ -59,13 +59,13 @@ puts board_example
 
 def display_board(_)
   puts
-  puts "Turn #{Player.count} happened.\n"
+  puts "Turn #{Player.counts} happened.\n"
   puts
-  puts "    #{Player.board[0]}   |  #{Player.board[1]}   |  #{Player.board[2]}  "
+  puts "    #{Player.boards[0]}   |  #{Player.boards[1]}   |  #{Player.boards[2]}  "
   puts ' ------------------------------- '
-  puts "    #{Player.board[3]}   |  #{Player.board[4]}   |  #{Player.board[5]}  "
+  puts "    #{Player.boards[3]}   |  #{Player.boards[4]}   |  #{Player.boards[5]}  "
   puts ' ------------------------------- '
-  puts "    #{Player.board[6]}   |  #{Player.board[7]}   |  #{Player.board[8]}  "
+  puts "    #{Player.boards[6]}   |  #{Player.boards[7]}   |  #{Player.boards[8]}  "
 end
 
 def play
@@ -93,7 +93,7 @@ def play
 
   match = Player.new(@player1, @player2, player1_drink, player2_drink)
 
-  while Player.board.include?(' ')
+  while Player.boards.include?(' ')
 
     puts "#{match.switch_turn} choose a number between 1 to 9"
 
@@ -104,8 +104,8 @@ def play
       end
     end
 
-    Player.winning_positions.each do |combinations|
-      if combinations.all? { |a| Player.board[a] == match.current_drink }
+    Player.winning_positionss.each do |combinations|
+      if combinations.all? { |a| Player.boards[a] == match.current_drink }
         return puts match.current_player.capitalize + ' Won!!!'
         break
       end

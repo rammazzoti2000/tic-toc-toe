@@ -4,7 +4,7 @@ class Position < Player
   attr_writer :get_position
 
   def self.get_position_num
-    while Player.board.include?(' ')
+    while Player.boards.include?(' ')
       @get_position = gets.strip.to_i
       return @get_position if (1..9).include?(@get_position)
 
