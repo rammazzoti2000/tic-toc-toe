@@ -9,17 +9,15 @@ puts "Welcome to the Tic Tac Toe. This is 2 players game"
 puts
 puts "This is the modern addaption of the Tic Tac Toe, this is to be played with \"rum\" and \"vodka\""
 puts
-puts "Whoever gets a straight line wins (vertically, horizontially or diagonally). Lets Drink!" 
-puts
 
 def valid_name(player)
   while player.empty?
-    if player.length < 1
+    if player.length <= 1
       puts "please enter valid_name"
-      player == gets.strip
+      player = gets.strip
     end
   end
-  return player 
+  player
 end
 
 print "player 1, please enter your name:- "
@@ -34,25 +32,6 @@ puts
 puts "Welcome, player 2:- #{$player_2}"
 puts
 
-rum = "rum  "
-vodka = "vodka"
-
-print "#{$player_1} choose between \"rum\" or \"#{vodka}\": - "
-
-player_1_drink = gets.strip.downcase
-
-while player_1_drink
-  if player_1_drink == "rum" || player_1_drink == vodka
-    player_2_drink = player_1_drink == "rum" ? vodka : rum;
-    puts
-    puts "#{$player_1} chose \"#{player_1_drink}\" and #{$player_2} is assigned with the \"#{player_2_drink}\""
-    break
-  else
-    puts "Error, Man is your liver weak? choose between \"rum\" or \"#{vodka}\"."
-    puts player_1_drink = gets.strip
-  end
-end
-
 def board_example
   puts
   puts "Lets have a look at how this game is played."
@@ -65,6 +44,8 @@ def board_example
   puts " ---------------------- "
   puts "   7  |   8   |   9    "
   puts
+  puts "Whoever gets a straight line wins(vertically, horizontially or diagonally). Lets Drink!"
+  puts
   puts " rum   |       | vodka  "
   puts " ---------------------- "
   puts " rum   | vodka |        "
@@ -74,29 +55,63 @@ def board_example
   puts "player with \"vodka\" won because got the stright line"
 end
 
-puts 
+puts
 puts board_example
 
 def display_board(board)
   puts
   puts "Turn #{$count} happened.\n"
-  puts "    #{board[0]}  |   #{board[1]}   | #{board[2]}  "
-  puts " ------------------------ "
-  puts "    #{board[3]}  |   #{board[4]}   | #{board[5]}  "
-  puts " ------------------------ "
-  puts "    #{board[6]}  |   #{board[7]}   | #{board[8]}  "
+  puts "    #{board[0]}   |  #{board[1]}   |  #{board[2]}  "
+  puts " ------------------------------- "
+  puts "    #{board[3]}   |  #{board[4]}   |  #{board[5]}  "
+  puts " ------------------------------- "
+  puts "    #{board[6]}   |  #{board[7]}   |  #{board[8]}  "
 end
 
-match = Player.new($player_1 , $player_2, player_1_drink, player_2_drink)
+def play
+  rum = "rum  "
+  vodka = "vodka"
 
-while $board.include?(" ")
-  puts "#{match.switch_turn} choose a number between 1 to 9"
+  print "#{$player_1} choose between \"rum\" or \"vodka\":- "
+  player_1_drink = gets.strip.downcase
 
-  loop do 
-    puts result = DisplayBoard.update_board((Position.get_position_num) -1)
-    if result != "Position already taken, try an empty one!"
+  while player_1_drink
+    if player_1_drink == "rum" || player_1_drink == vodka
+      player_2_drink = player_1_drink == "rum" ? vodka : rum;
+      if player_2_drink == vodka
+        player_1_drink = rum
+      end
+      puts
+      puts "\"#{$player_1}\" chose \"#{player_1_drink}\" and \"#{$player_2}\" is assigned with \"#{player_2_drink}\""
+      puts
       break
+    else
+      puts "Error, Man is your liver weak? choose between \"rum\" or \"#{vodka}\"."
+      puts player_1_drink = gets.strip
     end
   end
+
+  match = Player.new($player_1, $player_2, player_1_drink, player_2_drink)
+
+  while $board.include?(" ")
+    puts "#{match.switch_turn} choose a number between 1 to 9"
+
+    loop do
+      puts result = DisplayBoard.update_board((Position.get_position_num) - 1)
+      if result != "Position already taken, try an empty one!"
+        break
+      end
+    end
+
+    $winning_positions.each do |combinations|
+      if (combinations.all? { |a| $board[a] == $current_drink }) == true
+        $board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+        return puts $current_player.capitalize + " \"Won!!!\""
+        break
+      end
+    end
+  end
+  puts "It's a draw"
 end
 
+play
