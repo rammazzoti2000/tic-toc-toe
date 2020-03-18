@@ -78,6 +78,7 @@ puts
 puts board_example
 
 def display_board(board)
+  puts
   puts "Turn #{$count} happened.\n"
   puts "    #{board[0]}  |   #{board[1]}   | #{board[2]}  "
   puts " ------------------------ "
@@ -87,10 +88,15 @@ def display_board(board)
 end
 
 match = Player.new($player_1 , $player_2, player_1_drink, player_2_drink)
-game = DisplayBoard.new
+
 while $board.include?(" ")
   puts "#{match.switch_turn} choose a number between 1 to 9"
-  puts
-  puts game.update_board((Position.get_position_num) -1)
+
+  loop do 
+    puts result = DisplayBoard.update_board((Position.get_position_num) -1)
+    if result != "Position already taken, try an empty one!"
+      break
+    end
+  end
 end
 
