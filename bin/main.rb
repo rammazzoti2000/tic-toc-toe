@@ -5,9 +5,6 @@ require_relative '../lib/position.rb'
 require_relative '../lib/players.rb'
 require_relative '../lib/board.rb'
 
-
-puts 'Hello World'
-puts
 puts "Welcome to the Tic Tac Toe. This is 2 players game"
 puts
 puts "This is the modern addaption of the Tic Tac Toe, this is to be played with \"rum\" and \"vodka\""
@@ -42,11 +39,12 @@ vodka = "vodka"
 
 print "#{$player_1} choose between \"rum\" or \"#{vodka}\": - "
 
-player_1_drink = gets.strip.downcase 
+player_1_drink = gets.strip.downcase
 
 while player_1_drink
   if player_1_drink == "rum" || player_1_drink == vodka
     player_2_drink = player_1_drink == "rum" ? vodka : rum;
+    puts
     puts "#{$player_1} chose \"#{player_1_drink}\" and #{$player_2} is assigned with the \"#{player_2_drink}\""
     break
   else
@@ -57,7 +55,7 @@ end
 
 def board_example
   puts
-  puts "Lets look at the examples."
+  puts "Lets have a look at how this game is played."
   puts
   puts "Choose the number in the board between 1 to 9"
   puts
@@ -79,8 +77,6 @@ end
 puts 
 puts board_example
 
-$board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-
 def display_board(board)
   puts "Turn #{$count} happened.\n"
   puts "    #{board[0]}  |   #{board[1]}   | #{board[2]}  "
@@ -90,8 +86,11 @@ def display_board(board)
   puts "    #{board[6]}  |   #{board[7]}   | #{board[8]}  "
 end
 
-Player.new($player_1 , $player_2, player_1_drink, player_2_drink)
+match = Player.new($player_1 , $player_2, player_1_drink, player_2_drink)
+game = DisplayBoard.new
+while $board.include?(" ")
+  puts "#{match.switch_turn} choose a number between 1 to 9"
+  puts
+  puts game.update_board((Position.get_position_num) -1)
+end
 
-puts "#{switch_turn} choose a number"
-
-p Position.get_position_num
