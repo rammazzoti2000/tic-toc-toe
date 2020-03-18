@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require_relative '../lib/position.rb'
 require_relative '../lib/players.rb'
 
 puts 'Welcome to the Tic Tac Toe. This is 2 players game'
@@ -68,6 +67,15 @@ def display_board(_)
   puts "    #{Player.boards[6]}   |  #{Player.boards[7]}   |  #{Player.boards[8]}  "
 end
 
+def position_num
+  while Player.boards.include?(' ')
+    @get_position = gets.strip.to_i
+    return @get_position if (1..9).include?(@get_position)
+
+    'Error, invaild input!!! Choose a Number between 1 - 9'
+  end
+end
+
 def play
   rum = 'rum  '
   vodka = 'vodka'
@@ -98,7 +106,7 @@ def play
     puts "#{match.switch_turn} choose a number between 1 to 9"
 
     loop do
-      puts result = match.update_board((Position.get_position_num) - 1)
+      puts result = match.update_board((position_num) - 1)
       if result != 'Position already taken, try an empty one!'
         break
       end
