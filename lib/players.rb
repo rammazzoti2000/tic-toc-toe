@@ -1,12 +1,12 @@
 class Player
-  attr_reader :player1, :player_2, :player1_drink, :player_2_drink
+  attr_reader :player1, :player2, :player1_drink, :player2_drink
   attr_accessor :current_player, :current_drink
 
-  def initialize(player1, player_2, player1_drink, player_2_drink)
+  def initialize(player1, player2, player1_drink, player2_drink)
     @player1 = player1
-    @player2 = player_2
+    @player2 = player2
     @player1_drink = player1_drink
-    @player2_drink = player_2_drink
+    @player2_drink = player2_drink
     @current_drink = @player2_drink
   end
 
@@ -20,34 +20,42 @@ class Player
   ]
 
   def self.board
+    puts
     @board
   end
 
   def self.board=(num)
+    puts
     @board = num
   end
 
   def self.current_player
+    puts
     @current_player
   end
 
   def self.current_player=(player)
+    puts
     @current_player = player
   end
 
   def self.current_drink=(*)
+    puts
     @current_drink = @player2_drink
   end
 
   def self.winning_positions
+    puts
     @winning_positions
   end
 
   def self.count
+    puts
     @count
   end
 
   def self.count=(num)
+    puts
     @count = num
   end
 
