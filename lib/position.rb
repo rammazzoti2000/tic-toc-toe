@@ -8,7 +8,7 @@ class Position < Player
       @get_position = gets.strip.to_i
       return @get_position if (1..9).include?(@get_position)
 
-      puts 'Error, invaild input!!! Choose a Number between 1 - 9'
+      'Error, invaild input!!! Choose a Number between 1 - 9'
     end
   end
 end
