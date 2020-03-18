@@ -60,6 +60,7 @@ puts board_example
 def display_board(_)
   puts
   puts "Turn #{Player.count} happened.\n"
+  puts
   puts "    #{Player.board[0]}   |  #{Player.board[1]}   |  #{Player.board[2]}  "
   puts ' ------------------------------- '
   puts "    #{Player.board[3]}   |  #{Player.board[4]}   |  #{Player.board[5]}  "
