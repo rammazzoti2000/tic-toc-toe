@@ -1,13 +1,12 @@
 class Position
-    $count = 1
+    $count = 0
     attr_accessor :get_position
 
     def initialize
-        #@get_position = nil
     end
  
     def self.get_position_num
-        while (1..9).include?(@get_position) == false
+        while $board.include?(" ")
             @get_position = gets.strip.to_i
             if (1..9).include?(@get_position)
                 return @get_position
@@ -17,7 +16,3 @@ class Position
         end
     end
 end
-
-
-# geg = Position.new
-# puts geg.position_num

@@ -1,7 +1,6 @@
-#require_relative '../bin/main.rb'
-#require_relative 'position.rb'
+require_relative 'position.rb'
 
-class DisplayBoard
+class DisplayBoard < Player
   $board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
   
   attr_accessor  :board
@@ -10,14 +9,9 @@ class DisplayBoard
   end
 
   def update_board(num)
-    if $board[num].length < 2
-      $board[num] = "rum"
+      Position.get_position_num
+      $board[num] = $current_drink
       display_board($board)
-    else
-      "Position already taken, try an empty one"
     end
   end
 end
-
-# game = DisplayBoard.new
-# puts game.update_board(2)

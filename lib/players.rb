@@ -1,24 +1,21 @@
-# require_relative '../bin/main.rb'
-# require_relative '../lib/position.rb'
+require_relative '../lib/position.rb'
 
 class Player
-    attr_accessor :player_1, :player_2 , :current_player  
+    $current_player = @player_1
+    $current_drink = @player_1_drink
+    
+    attr_accessor :player_1, :player_2 , :current_player , :player_1_drink, :player_2_drink
 
     def initialize(player_1, player_2, player_1_drink, player_2_drink)
         @player_1 = player_1
         @player_2 = player_2
         @player_1_drink = player_1_drink
         @player_2_drink = player_2_drink
-        @current_player  = @player_1
     end
 
     def switch_turn
         $count += 1
-        @current_player == @player_1 ? @current_player = @player_2 : @current_player = @player_1 
+        $current_drink == @player_1_drink ? $current_drink = @player_2_drink : $current_drink = @player_1_drink 
+        $current_player == @player_1 ? $current_player = @player_2 : $current_player = @player_1
     end
 end
-
-# players = Player.new($layer_1, $player_2)
-# #puts players.player_1
-# #puts players.player_2
-# puts players.switch_turn
