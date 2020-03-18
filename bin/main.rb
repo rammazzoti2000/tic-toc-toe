@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-# frozen_string_literal: true
 
 require_relative '../lib/players.rb'
 
@@ -76,6 +75,8 @@ def position_num
   end
 end
 
+# rubocop:disable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
+# rubocop:disable Metrics/MethodLength
 def play
   rum = 'rum  '
   vodka = 'vodka'
@@ -89,9 +90,7 @@ def play
       puts
       puts "\'#{@player1}\' chose \'#{player1_drink}\' and \'#{@player2}\' is assigned with \'#{player2_drink}\'"
       puts
-      if player2_drink == vodka
-        player1_drink = rum
-      end
+      player1_drink = rum if player2_drink == vodka
       break
     else
       puts "Error, Man is your liver weak? choose between \'rum\' or \'#{vodka}\'."
@@ -106,21 +105,20 @@ def play
     puts "#{match.switch_turn} choose a number between 1 to 9"
 
     loop do
-      puts result = match.update_board((position_num) - 1)
-      if result != 'Position already taken, try an empty one!'
-        break
-      end
+      puts result = match.update_board(position_num - 1)
+      break if result != 'Position already taken, try an empty one!'
     end
 
     Player.winning_positionss.each do |combinations|
       if combinations.all? { |a| Player.boards[a] == match.current_drink }
         return puts match.current_player.capitalize + ' Won!!!'
-        break
       end
     end
   end
 
   puts 'It\'s a draw'
 end
+# rubocop:enable Metrics/MethodLength
+# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 
 play
