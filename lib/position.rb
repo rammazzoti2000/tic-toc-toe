@@ -1,11 +1,10 @@
-# frozen_string_literal: true
+require_relative './players.rb'
 
-class Position
-  $count = 0
+class Position < Player
   attr_accessor :get_position
 
   def self.get_position_num
-    while $board.include?(' ')
+    while Player.board.include?(' ')
       @get_position = gets.strip.to_i
       return @get_position if (1..9).include?(@get_position)
 
