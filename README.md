@@ -96,19 +96,19 @@ To play this game you need to:
     ```
     Player 1 turn
 
-             rum   |   2   |   3  
-            ----------------------
-                4  |   5   |   6  
-            ----------------------
-                7  |   8   |   9  
+          rum  |   2   |   3  
+        ----------------------
+           4   |   5   |   6  
+        ----------------------
+           7   |   8   |   9  
 
     Player 2 turn
 
-             rum  |   2   |   3  
-            ----------------------
-               4  |   5   |   6  
-            ----------------------
-            vodka |   8   |   9  
+         rum  |   2   |   3  
+        ----------------------
+           4  |   5   |   6  
+        ----------------------
+        vodka |   8   |   9  
     ```
     * The first player to get 3 tokens in a row (up, down, across, or diagonally) wins.
     ```
