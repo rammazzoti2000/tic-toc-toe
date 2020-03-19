@@ -22,7 +22,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/rammazzoti2000/tic-tac-toe">
+  <a href="https://github.com/rammazzoti2000/tic-toc-toe">
     <img src="images/microverse.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -31,15 +31,14 @@
   <p align="center">
     This project is part of the Microverse curriculum in Ruby module!
     <br />
-    <a href="https://github.com/rammazzoti2000/
-tic-tac-toe"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/rammazzoti2000/tic-toc-toe"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://repl.it/@AlexandruBangau/tic-toc-toe">View Demo</a>
     ·
-    <a href="https://github.com/rammazzoti2000/tic-tac-toe/issues">Report Bug</a>
+    <a href="https://github.com/rammazzoti2000/tic-toc-toe/issues">Report Bug</a>
     ·
-    <a href="https://github.com/rammazzoti2000/tic-tac-toe/issues">Request Feature</a>
+    <a href="https://github.com/rammazzoti2000/tic-toc-toe/issues">Request Feature</a>
   </p>
 </p>
 
