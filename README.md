@@ -114,11 +114,11 @@ To play this game you need to:
     ```
     Winning combinations (W is either "rum" or "vodka").
 
-          **W** | **W** | **W**    1 | 2 | 3	   1 | 2 | 3     **W** | 2 | 3     1 | **W** | 3	   1 | 2 | **W**     **W** | 2 | 3	   1 | 2 | **W**
+          W | W | W    1 | 2 | 3	   1 | 2 | 3     W | 2 | 3     1 | W | 3	   1 | 2 | W     W | 2 | 3	   1 | 2 | W
          -----------	-----------	   -----------	-----------	  -----------	  -----------	  -----------	  -----------
-          4 | 5 | 6	   **W** | **W** | **W**	   4 | 5 | 6	   **W** | 5 | 6	   4 | **W** | 6	   4 | 5 | **W**	   4 | **W** | 6	   4 | **W** | 6
+          4 | 5 | 6	   W | W | W	   4 | 5 | 6	   W | 5 | 6	   4 | W | 6	   4 | 5 | W	   4 | W | 6	   4 | W | 6
          -----------	-----------	   -----------	-----------	  -----------	  -----------	  -----------	  -----------
-          7 | 8 | 9	   7 | 8 | 9	   **W** | **W** | **W**	   **W** | 8 | 9	   7 | **W** | 9	   7 | 8 | **W**	   7 | 8 | **W**	   **W** | 8 | 9
+          7 | 8 | 9	   7 | 8 | 9	   W | W | W	   W | 8 | 9	   7 | W | 9	   7 | 8 | W	   7 | 8 | W	   W | 8 | 9
     ```
     * When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends and nobody wins.
 
@@ -133,7 +133,7 @@ To play this game you need to:
 
 
 
-### Built **W**ith
+### Built With
 This project was built using these technologies.
 * Ruby
 * Rubocop
@@ -169,14 +169,14 @@ You can see it working [here](https://repl.it/@AlexandruBangau/tic-toc-toe)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/rammazzoti2000/tic-tac-toe.svg?style=flat-square
-[contributors-url]: https://github.com/rammazzoti2000/tic-tac-toe/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/rammazzoti2000/tic-tac-toe.svg?style=flat-square
-[forks-url]: https://github.com/rammazzoti2000/tic-tac-toe/network/members
-[stars-shield]: https://img.shields.io/github/stars/rammazzoti2000/tic-tac-toe.svg?style=flat-square
-[stars-url]: https://github.com/rammazzoti2000/tic-tac-toe/stargazers
-[issues-shield]: https://img.shields.io/github/issues/rammazzoti2000/tic-tac-toe.svg?style=flat-square
-[issues-url]: https://github.com/rammazzoti2000/tic-tac-toe/issues
+[contributors-shield]: https://img.shields.io/github/contributors/rammazzoti2000/tic-toc-toe.svg?style=flat-square
+[contributors-url]: https://github.com/rammazzoti2000/tic-toc-toe/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/rammazzoti2000/tic-toc-toe.svg?style=flat-square
+[forks-url]: https://github.com/rammazzoti2000/tic-toc-toe/network/members
+[stars-shield]: https://img.shields.io/github/stars/rammazzoti2000/tic-toc-toe.svg?style=flat-square
+[stars-url]: https://github.com/rammazzoti2000/tic-toc-toe/stargazers
+[issues-shield]: https://img.shields.io/github/issues/rammazzoti2000/tic-toc-toe.svg?style=flat-square
+[issues-url]: https://github.com/rammazzoti2000/tic-toc-toe/issues
 [product-screenshot]: images/tic-tac-toe.png
 
 ## 📝 License
