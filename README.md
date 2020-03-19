@@ -91,7 +91,7 @@ To play this game you need to:
   ```
 
   * The tokens you will play with in this game version will be "rum" and "vodka". While the first player will have the option to choose from the given tokens, the second player will have the token automatically assigned.
-  * Each player will take turns putting their tokens in empty squares.
+  * Each player will take turns putting their assigned token in empty squares.
     ```
     Player 1 turn
 
