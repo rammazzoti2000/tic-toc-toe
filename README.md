@@ -93,7 +93,7 @@ To play this game you need to:
   * The tokens you will play with in this game version will be "rum" and "vodka". While the first player will have the option to choose from the given tokens, the second player will have the token automatically assigned.
   * Each player will take turns putting their assigned token in empty squares.
     ```
-    Player 1 turn
+      Player 1 turn - "rum"
 
           rum  |   2   |   3  
         ----------------------
@@ -101,7 +101,7 @@ To play this game you need to:
         ----------------------
            7   |   8   |   9  
 
-    Player 2 turn
+      Player 2 turn - "vodka"
 
          rum  |   2   |   3  
         ----------------------
@@ -111,7 +111,7 @@ To play this game you need to:
     ```
     * The first player to get 3 tokens in a row (up, down, across, or diagonally) wins.
     ```
-    Winning combinations (W is either "rum" or "vodka").
+        Winning combinations (W is either "rum" or "vodka").
 
           W | W | W    1 | 2 | 3     1 | 2 | 3     W | 2 | 3     1 | W | 3     1 | 2 | W     W | 2 | 3     1 | 2 | W 
          -----------  -----------   -----------  -----------    -----------   -----------   -----------   -----------
@@ -122,11 +122,11 @@ To play this game you need to:
     * When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends and nobody wins.
 
       ```
-             rum  | vodka |  rum  
-            ----------------------
-             rum  | vodka | vodka 
-            ----------------------
-            vodka |  rum  |  rum  
+          rum  | vodka |  rum  
+        ----------------------
+          rum  | vodka | vodka 
+        ----------------------
+         vodka |  rum  |  rum  
       ```
 
 
