@@ -47,6 +47,9 @@ describe Player do
       it 'should accept Number as a single agument to set a value for @board' do
         expect(Player.boards=(num)).to eq(new_board = num)
       end
+      it 'ArgumentError num is not a Number' do
+        expect {Player.boards=(num)}.not_to raise_error(new_board != num)
+      end
     end
 
     describe '.counts' do
@@ -58,6 +61,9 @@ describe Player do
     describe '.counts=(num)' do
       it 'should accept Number as a single agument to set a value for @count' do
         expect(Player.counts=(num)).to eq(count = num)
+      end
+      it 'ArgumentError num is not a Number' do
+        expect {Player.counts=(num)}.not_to raise_error(count != num)
       end
     end
 
