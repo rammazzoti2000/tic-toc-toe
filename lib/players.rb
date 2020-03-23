@@ -24,7 +24,7 @@ class Player
   end
 
   def self.boards=(num)
-    @board = num
+    @boards = num
   end
 
   def self.current_players
