@@ -15,6 +15,7 @@ describe Player do
     ]}
     let(:players) {players = @player2 || @player1}
     let(:current_players) {@current_player}
+    let(:current_drink) {@player2_drink}
 
     describe '#initialize' do
         it 'should take 4 arguments' do
@@ -97,6 +98,15 @@ describe Player do
       end
     end
 
+    describe '.current_drinks' do
+      it 'should set the variable @current_drinks to current_drink' do
+        expect(Player.current_drinks=()).to eq(@current_drinks)
+      end
+
+      it 'should take single argument' do
+         expect{Player.current_players=()}.not_to raise_error(ArgumentError)
+      end
+    end
 
 end
 
