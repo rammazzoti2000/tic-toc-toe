@@ -13,6 +13,8 @@ describe Player do
     [0, 3, 6], [1, 4, 7], [2, 5, 8],
     [0, 4, 8], [2, 4, 6]
     ]}
+    let(:players) {players = @player2 || @player1}
+    let(:current_players) {@current_player}
 
     describe '#initialize' do
         it 'should take 4 arguments' do
@@ -76,7 +78,23 @@ describe Player do
       end
       it 'should be not an empty.Array' do 
         expect(Player.winning_positionss).not_to eq(winning_positions.empty?)
+      end
+    end
 
+    describe '.current_players' do
+      it 'should get the variable @current_players' do
+        expect(Player.current_players).to eq(current_players)
+      end
+    end
+
+    describe '.current_players=(player)' do
+      it 'should set the variable @current_players to player' do
+        expect(Player.current_players=(players)).to eq(@player2)
+      end
+
+      it 'should take single argument' do
+        #expect {Player.current_players=(players)}.to be_a(player)
+        (Player.current_players=(players)) { is_expected.to raise_error } 
       end
     end
 
