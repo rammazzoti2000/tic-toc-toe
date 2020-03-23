@@ -7,7 +7,8 @@ describe Player do
     let(:new_board) {@board = Array.new(9, ' ')}
     let(:current_player) {@current_player = @player2}
     let(:num) {num = Numeric}
-  #   @count = 0
+    let(:count) {@count = 0}
+
   #   @winning_positions = [
   #   [0, 1, 2], [3, 4, 5], [6, 7, 8],
   #   [0, 3, 6], [1, 4, 7], [2, 5, 8],
@@ -43,11 +44,22 @@ describe Player do
     end
 
     describe '.boards=(num)' do
-      it 'should accept Number as a single agument' do
+      it 'should accept Number as a single agument to set a value for @board' do
         expect(Player.boards=(num)).to eq(new_board = num)
       end
     end
 
+    describe '.counts' do
+      it 'should get the variable @counts' do
+        expect(Player.counts).to eq(count)
+      end
+    end
+
+    describe '.counts=(num)' do
+      it 'should accept Number as a single agument to set a value for @count' do
+        expect(Player.counts=(num)).to eq(count = num)
+      end
+    end
 
 end
 
