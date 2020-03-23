@@ -4,7 +4,16 @@ require 'players'
 
 describe Player do
     let(:player) { Player.new('player1', 'player2', 'player1_drink' , 'player2_drink') }
-    let(@board) { Player.board = Array.new(9, ' ') }
+
+    let(:new_board) {@board = Array.new(9, ' ')}
+  #   @current_player = @player2
+  #   @count = 0
+  #   @winning_positions = [
+  #   [0, 1, 2], [3, 4, 5], [6, 7, 8],
+  #   [0, 3, 6], [1, 4, 7], [2, 5, 8],
+  #   [0, 4, 8], [2, 4, 6]
+  # ]
+    
 
     describe '#initialize' do
         it 'should take 4 arguments' do
@@ -22,29 +31,17 @@ describe Player do
           expect(player.instance_variable_get(:@player2_drink)).to eq('player2_drink')
         end
 
-        it "should set the instance variable @current_drink to player2_drink" do
+        it 'should set the instance variable @current_drink to player2_drink' do
           expect(player.instance_variable_get(:@current_drink)).to eq('player2_drink')
         end
     end
 
-    it "should set the instance variables @board, @current_player, @count, @winning_positions" do
-      #expect(@board).to eq(@board)
-      expect(@current_player).to eq(@player2)
-      #expect(@count).to eq(0.zero?)
-      # expect(@winning_positions.to_a).to eq([
-      #   [0, 1, 2], [3, 4, 5], [6, 7, 8],
-      #   [0, 3, 6], [1, 4, 7], [2, 5, 8],
-      #   [0, 4, 8], [2, 4, 6]
-      # ])
+    describe '.boards' do
+      it 'should get the variable @board' do
+        expect(Player.boards).to eq(new_board)
+      end
     end
 
 
 end
 
-
-
-# it "should set the instance variables @name, @slogan, and @student_capacity" do
-#   expect(bootcamp.instance_variable_get(:@name)).to eq("Map Academy")
-#   expect(bootcamp.instance_variable_get(:@slogan)).to eq("Anyone can be a cartographer.")
-#   expect(bootcamp.instance_variable_get(:@student_capacity)).to eq(6)
-# end
