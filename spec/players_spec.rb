@@ -3,7 +3,7 @@
 require 'players'
 
 describe Player do
-    let(:player) { Player.new('player1', 'player2', 'player1_drink' , 'player2_drink') }
+    let(:game) { Player.new('player1', 'player2', 'player1_drink' , 'player2_drink') }
     let(:new_board) {@board = Array.new(9, ' ')}
     let(:current_player) {@current_player = @player2}
     let(:num) {num = Numeric}
@@ -19,7 +19,7 @@ describe Player do
 
     describe '#initialize' do
         it 'should take 4 arguments' do
-            player
+            game
         end
 
         it 'returns an ArgumentError if the Player is initialized with no arguments or more than 4 arguments' do
@@ -27,14 +27,14 @@ describe Player do
         end
 
         it "should set the instance variables @player1, @player2, @player1_drink and @player2_drink" do
-          expect(player.instance_variable_get(:@player1)).to eq('player1')
-          expect(player.instance_variable_get(:@player2)).to eq('player2')
-          expect(player.instance_variable_get(:@player1_drink)).to eq('player1_drink')
-          expect(player.instance_variable_get(:@player2_drink)).to eq('player2_drink')
+          expect(game.instance_variable_get(:@player1)).to eq('player1')
+          expect(game.instance_variable_get(:@player2)).to eq('player2')
+          expect(game.instance_variable_get(:@player1_drink)).to eq('player1_drink')
+          expect(game.instance_variable_get(:@player2_drink)).to eq('player2_drink')
         end
 
         it 'should set the instance variable @current_drink to player2_drink' do
-          expect(player.instance_variable_get(:@current_drink)).to eq('player2_drink')
+          expect(game.instance_variable_get(:@current_drink)).to eq('player2_drink')
         end
     end
 
@@ -88,8 +88,8 @@ describe Player do
       end
     end
 
-    describe '.current_players=(player)' do
-      it 'should set the variable @current_players to player' do
+    describe '.current_players=(game)' do
+      it 'should set the variable @current_players to game' do
         expect(Player.current_players=(players)).to eq(@player2)
       end
 
@@ -103,8 +103,14 @@ describe Player do
         expect(Player.current_drinks=()).to eq(@current_drinks)
       end
 
-      it 'should take single argument' do
+      it 'should take any argument' do
          expect{Player.current_players=()}.not_to raise_error(ArgumentError)
+      end
+    end
+
+    describe '#update_board' do
+      it 'should take an agrument num' do
+         expect(game.update_board(num)).to be_a(num)
       end
     end
 
