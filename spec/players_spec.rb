@@ -8,13 +8,11 @@ describe Player do
     let(:current_player) {@current_player = @player2}
     let(:num) {num = Numeric}
     let(:count) {@count = 0}
-
-  #   @winning_positions = [
-  #   [0, 1, 2], [3, 4, 5], [6, 7, 8],
-  #   [0, 3, 6], [1, 4, 7], [2, 5, 8],
-  #   [0, 4, 8], [2, 4, 6]
-  # ]
-    
+    let(:winning_positions) {@winning_positions = [
+    [0, 1, 2], [3, 4, 5], [6, 7, 8],
+    [0, 3, 6], [1, 4, 7], [2, 5, 8],
+    [0, 4, 8], [2, 4, 6]
+    ]}
 
     describe '#initialize' do
         it 'should take 4 arguments' do
@@ -47,6 +45,7 @@ describe Player do
       it 'should accept Number as a single agument to set a value for @board' do
         expect(Player.boards=(num)).to eq(new_board = num)
       end
+
       it 'ArgumentError num is not a Number' do
         expect {Player.boards=(num)}.not_to raise_error(new_board != num)
       end
@@ -62,10 +61,25 @@ describe Player do
       it 'should accept Number as a single agument to set a value for @count' do
         expect(Player.counts=(num)).to eq(count = num)
       end
+
       it 'ArgumentError num is not a Number' do
         expect {Player.counts=(num)}.not_to raise_error(count != num)
       end
     end
+
+    describe '.winning_positionss' do
+      it 'should be get the variable @winning_positions' do
+        expect(Player.winning_positionss).to eq(winning_positions)
+      end
+      it "should be an Array" do
+        expect(Player.winning_positionss).to be_a(Array)
+      end
+      it 'should be not an empty.Array' do 
+        expect(Player.winning_positionss).not_to eq(winning_positions.empty?)
+
+      end
+    end
+
 
 end
 
