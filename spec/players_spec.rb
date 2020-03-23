@@ -93,8 +93,7 @@ describe Player do
       end
 
       it 'should take single argument' do
-        #expect {Player.current_players=(players)}.to be_a(player)
-        (Player.current_players=(players)) { is_expected.to raise_error } 
+         expect{Player.current_players=(players)}.not_to raise_error(ArgumentError)
       end
     end
 
