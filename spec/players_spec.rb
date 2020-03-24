@@ -118,10 +118,26 @@ describe Player do
 
     it 'should take Number as an argument' do
       expect{game.update_board(5)}.not_to raise_error(ArgumentError)
-      expect(game.update_board(5)).to eq{new_board == ' ' ? Player.boards[5] = current_drink : 'Position already taken, try an empty one!'}
+      # expect(game.update_board(5)).to eq{new_board == ' ' ? Player.boards[5] = current_drink : 'Position already taken, try an empty one!'}
       # if Player.boards[num] == ' '
       # Player.boards[num] = @current_drink
       # display_board(@board)
+    end
+
+    # it 'if Player.boards[num] == \' \'' do
+    #   expect(Player.boards[1]).to eq(' ')
+    # end
+
+    # it 'boards[num] should equal @current_drink' do
+
+    #   expect((Player.boards[1]).class).to be_a((Player.boards[1] = current_drink.class))
+    # end
+
+    Player.boards[1] = current_player
+    context "when true", if: Player.boards[1] do
+      it 'passes' do
+        expect(true).to be_a(current_drink)
+      end
     end
   end
 end
