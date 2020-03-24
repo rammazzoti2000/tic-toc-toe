@@ -54,7 +54,6 @@ class Player
   def update_board(num)
     if Player.boards[num] == ' '
       Player.boards[num] = @current_drink
-      display_board(@board)
     else
       'Position already taken, try an empty one!'
     end

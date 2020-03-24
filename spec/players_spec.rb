@@ -1,6 +1,7 @@
 # spec/players_spec.rb
 
 require 'players'
+require_relative '../lib/board.rb'
 
 describe Player do
   let(:game) { Player.new('player1', 'player2', 'player1_drink', 'player2_drink') }
@@ -14,7 +15,7 @@ describe Player do
       [0, 4, 8], [2, 4, 6]
     ]
   }
-  let(:players) { players = @player2 || @player1 }
+  let(:players) { players = @player2 }
   let(:current_players) { @current_player = @player2 }
   let(:current_drink) { @player2_drink }
 
@@ -112,15 +113,15 @@ describe Player do
   describe '#update_board' do
     it 'should take Number as an agrument' do
       expect{game.update_board(5)}.to_not raise_error(5)
+
     end
 
-    # it 'should update the board Array with the @current_drink at the given position' do
-    #   # display_board(board) =  puts
-  
-    #   # expect(game.update_board(6)).to eq(display_board(@board))
-    #   # if Player.boards[num] == ' '
-    #   # Player.boards[num] = @current_drink
-    #   # display_board(@board)
-    # end
+    it 'should take Number as an argument' do
+      expect{game.update_board(5)}.not_to raise_error(ArgumentError)
+      expect(game.update_board(5)).to eq{new_board == ' ' ? Player.boards[5] = current_drink : 'Position already taken, try an empty one!'}
+      # if Player.boards[num] == ' '
+      # Player.boards[num] = @current_drink
+      # display_board(@board)
+    end
   end
 end
