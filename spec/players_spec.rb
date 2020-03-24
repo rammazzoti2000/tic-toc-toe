@@ -5,18 +5,10 @@ require 'players'
 describe Player do
   let(:game) { Player.new('player1', 'player2', 'player1_drink', 'player2_drink') }
   let(:new_board) { @board = Array.new(9, ' ') }
-  let(:num) { num = [0, 1, 2, 3, 4, 5, 6, 7, 8] }
-  let(:count) { @count = 0 }
-  let(:winning_positions) {
-    @winning_positions = [
-      [0, 1, 2], [3, 4, 5], [6, 7, 8],
-      [0, 3, 6], [1, 4, 7], [2, 5, 8],
-      [0, 4, 8], [2, 4, 6]
-    ]
-  }
-  let(:players) { players = game.player1 }
-  let(:current_players) { @current_player = game.player2 }
-  let(:current_drink) { @current_drink = game.player2_drink }
+  let(:count) { 0 }
+  let(:players) { game.player1 }
+  let(:current_players) { game.player2 }
+  let(:current_drink) { game.player2_drink }
 
   describe '#initialize' do
     it 'should take 4 arguments' do
@@ -24,10 +16,10 @@ describe Player do
     end
 
     it 'returns an ArgumentError if the Player is initialized with no arguments or more than 4 arguments' do
-      expect { Player.new }.to raise_error(ArgumentError)
+      expect { Player.new('player1', 'player2', 'player1_drink', 'player2_drink') }.not_to raise_error(ArgumentError)
     end
 
-    it "should set the instance variables @player1, @player2, @player1_drink and @player2_drink" do
+    it 'should set the instance variables @player1, @player2, @player1_drink and @player2_drink' do
       expect(game.instance_variable_get(:@player1)).to eq('player1')
       expect(game.instance_variable_get(:@player2)).to eq('player2')
       expect(game.instance_variable_get(:@player1_drink)).to eq('player1_drink')
@@ -47,11 +39,11 @@ describe Player do
 
   describe '.boards=(num)' do
     it 'should accept Number as an argument and set a value for @board[num] = num' do
-      expect(Player.boards = (num)).to eq(new_board = num)
+      expect(Player.boards = 4).to eq(4)
     end
 
     it 'ArgumentError num is not a Number' do
-      expect { Player.boards = (5) }.not_to raise_error(5 == Numeric)
+      expect { Player.boards = 5 }.not_to raise_error(ArgumentError)
     end
   end
 
@@ -63,19 +55,24 @@ describe Player do
 
   describe '.counts=(num)' do
     it 'should accept Number as a single agument to set a value for @count' do
-      expect(Player.counts = (num)).to eq(count = num)
+      expect(Player.counts = 4).to eq(4)
     end
 
     it 'ArgumentError num is not a Number' do
-      expect { Player.counts = (7) }.not_to raise_error(count != 7)
+      expect { Player.counts = 7 }.not_to raise_error(count != 7)
     end
   end
 
   describe '.winning_positionss' do
+    winning_positions = [
+      [0, 1, 2], [3, 4, 5], [6, 7, 8],
+      [0, 3, 6], [1, 4, 7], [2, 5, 8],
+      [0, 4, 8], [2, 4, 6]
+    ]
     it 'should be get the variable @winning_positions' do
       expect(Player.winning_positionss).to eq(winning_positions)
     end
-    it "should be an Array" do
+    it 'should be an Array' do
       expect(Player.winning_positionss).to be_a(Array)
     end
     it 'should be not an empty.Array' do
@@ -91,11 +88,11 @@ describe Player do
 
   describe '.current_players=(game)' do
     it 'should set the variable @current_players to game' do
-      expect(Player.current_players = (players)).to eq(game.player1)
+      expect(Player.current_players = players).to eq(game.player1)
     end
 
     it 'should take single argument' do
-      expect { Player.current_players = (players) }.not_to raise_error(ArgumentError)
+      expect { Player.current_players = players }.not_to raise_error(ArgumentError)
     end
   end
 
