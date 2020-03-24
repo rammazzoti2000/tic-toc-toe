@@ -24,7 +24,7 @@ class Player
   end
 
   def self.boards=(num)
-    @board = num
+    @boards = num
   end
 
   def self.current_players
@@ -33,10 +33,6 @@ class Player
 
   def self.current_players=(player)
     @current_player = player
-  end
-
-  def self.current_drinks=(*)
-    @current_drink = @player2_drink
   end
 
   def self.winning_positionss
@@ -54,7 +50,6 @@ class Player
   def update_board(num)
     if Player.boards[num] == ' '
       Player.boards[num] = @current_drink
-      display_board(@board)
     else
       'Position already taken, try an empty one!'
     end

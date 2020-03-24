@@ -106,6 +106,7 @@ def play
 
     loop do
       puts result = match.update_board(position_num - 1)
+      display_board(@board)
       break if result != 'Position already taken, try an empty one!'
     end
 
