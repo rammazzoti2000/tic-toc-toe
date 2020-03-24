@@ -1,7 +1,6 @@
 # spec/players_spec.rb
 
 require 'players'
-require_relative '../lib/board.rb'
 
 describe Player do
   let(:game) { Player.new('player1', 'player2', 'player1_drink', 'player2_drink') }
@@ -15,9 +14,9 @@ describe Player do
       [0, 4, 8], [2, 4, 6]
     ]
   }
-  let(:players) { players = @player2 }
-  let(:current_players) { @current_player = @player2 }
-  let(:current_drink) { @player2_drink }
+  let(:players) { players = game.player1 }
+  let(:current_players) { @current_player = game.player2 }
+  let(:current_drink) {@current_drink = game.player2_drink }
 
   describe '#initialize' do
     it 'should take 4 arguments' do
@@ -86,13 +85,13 @@ describe Player do
 
   describe '.current_players' do
     it 'should get the variable @current_players' do
-      expect(Player.current_players).to eq(current_players)
+      expect(game.player2).to eq(current_players)
     end
   end
 
   describe '.current_players=(game)' do
     it 'should set the variable @current_players to game' do
-      expect(Player.current_players = (players)).to eq(@player2)
+      expect(Player.current_players = (players)).to eq(game.player1)
     end
 
     it 'should take single argument' do
@@ -100,44 +99,41 @@ describe Player do
     end
   end
 
-  describe '.current_drinks' do
-    it 'should set the variable @current_drinks to current_drink' do
-      expect(Player.current_drinks = ()).to eq(@current_drinks)
-    end
-
-    it 'should take any argument' do
-      expect { Player.current_players = () }.not_to raise_error(ArgumentError)
-    end
-  end
-
   describe '#update_board' do
-    it 'should take Number as an agrument' do
-      expect{game.update_board(5)}.to_not raise_error(5)
-
-    end
-
     it 'should take Number as an argument' do
-      expect{game.update_board(5)}.not_to raise_error(ArgumentError)
-      # expect(game.update_board(5)).to eq{new_board == ' ' ? Player.boards[5] = current_drink : 'Position already taken, try an empty one!'}
-      # if Player.boards[num] == ' '
-      # Player.boards[num] = @current_drink
-      # display_board(@board)
+      expect{game.update_board(4)}.not_to raise_error(ArgumentError)
+    end
+    
+    it 'should assign current_drink to empty board position' do
+      expect(Player.boards[2]).to eq(' ')
+      expect(game.update_board(2)).to eq(current_drink)
     end
 
-    # it 'if Player.boards[num] == \' \'' do
-    #   expect(Player.boards[1]).to eq(' ')
-    # end
-
-    # it 'boards[num] should equal @current_drink' do
-
-    #   expect((Player.boards[1]).class).to be_a((Player.boards[1] = current_drink.class))
-    # end
-
-    Player.boards[1] = current_player
-    context "when true", if: Player.boards[1] do
-      it 'passes' do
-        expect(true).to be_a(current_drink)
-      end
+    it 'should return a String when the board position is already occupied' do
+      expect(game.update_board(2)).to be_a(String)
     end
   end
+
+  describe '#switch_turn' do
+    it 'should have 0 arguments' do
+      expect{game.switch_turn}.not_to raise_error(ArgumentError)
+    end
+
+    it 'should increment variable @count by 1' do
+      expect(Player.counts += 1).to eq(9)
+    end
+
+    it 'should change the @current_player with each turn' do 
+      expect(current_players == game.player2).to eq(true)
+      expect(game.switch_turn).to eq(game.player1)
+      expect(game.switch_turn).to eq(game.player2)
+    end
+
+    it 'should change the @current_drink with each turn' do 
+      expect(current_drink).to eq(game.player2_drink)
+      game.switch_turn
+      current_drink = game.player1_drink
+      expect(current_drink).to eq(game.player1_drink)
+    end
+  end 
 end

@@ -35,10 +35,6 @@ class Player
     @current_player = player
   end
 
-  def self.current_drinks=(*)
-    @current_drink = @player2_drink
-  end
-
   def self.winning_positionss
     @winning_positions
   end
