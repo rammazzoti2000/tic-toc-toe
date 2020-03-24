@@ -16,7 +16,7 @@ describe Player do
   }
   let(:players) { players = game.player1 }
   let(:current_players) { @current_player = game.player2 }
-  let(:current_drink) {@current_drink = game.player2_drink }
+  let(:current_drink) { @current_drink = game.player2_drink }
 
   describe '#initialize' do
     it 'should take 4 arguments' do
@@ -101,9 +101,9 @@ describe Player do
 
   describe '#update_board' do
     it 'should take Number as an argument' do
-      expect{game.update_board(4)}.not_to raise_error(ArgumentError)
+      expect { game.update_board(4) }.not_to raise_error(ArgumentError)
     end
-    
+
     it 'should assign current_drink to empty board position' do
       expect(Player.boards[2]).to eq(' ')
       expect(game.update_board(2)).to eq(current_drink)
@@ -116,24 +116,24 @@ describe Player do
 
   describe '#switch_turn' do
     it 'should have 0 arguments' do
-      expect{game.switch_turn}.not_to raise_error(ArgumentError)
+      expect { game.switch_turn }.not_to raise_error(ArgumentError)
     end
 
     it 'should increment variable @count by 1' do
       expect(Player.counts += 1).to eq(9)
     end
 
-    it 'should change the @current_player with each turn' do 
+    it 'should change the @current_player with each turn' do
       expect(current_players == game.player2).to eq(true)
       expect(game.switch_turn).to eq(game.player1)
       expect(game.switch_turn).to eq(game.player2)
     end
 
-    it 'should change the @current_drink with each turn' do 
+    it 'should change the @current_drink with each turn' do
       expect(current_drink).to eq(game.player2_drink)
       game.switch_turn
       current_drink = game.player1_drink
       expect(current_drink).to eq(game.player1_drink)
     end
-  end 
+  end
 end
