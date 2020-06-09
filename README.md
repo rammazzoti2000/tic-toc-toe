@@ -49,7 +49,7 @@
   * [Built With](#built-with)
   * [Live Version](#live-version)
   * [Usage](#usage)
-  * [Automated Test](automated-test)
+  * [Automated Test](#automated-test)
 * [Game Rules](#game-rules)
 * [Contributors](#contributors)
 * [Contributing](#contributing)
@@ -89,7 +89,7 @@ To play this game you need to:
 * and execute bin/main.rb file using your terminal
 
 <!-- AUTOMATED TEST -->
-### Automated Test
+## Automated Test
 
 To run the test you need to cd into the tic-tac-toe diretory and run:
 
