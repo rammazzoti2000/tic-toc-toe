@@ -47,8 +47,12 @@
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
-* [Live Version](#live-version)
-* [Contact](#contact)
+  * [Live Version](#live-version)
+  * [Usage](#usage)
+  * [Automated Test](automated-test)
+* [Game Rules](#game-rules)
+* [Contributors](#contributors)
+* [Contributing](#contributing)
 * [Acknowledgements](#acknowledgements)
 * [License](#license)
 
@@ -57,12 +61,19 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://repl.it/@AlexandruBangau/tic-toc-toe)
 
-This is the third project of the Microverse Ruby Module
+This is the fifth project of the Microverse Ruby Module
 
-This is also the first project of the [Odin project curriculum](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
+This is also the first project of the Odin Curriculum ([Ruby Programming - OOP](https://www.theodinproject.com/courses/ruby-programming/lessons/oop))
+
+
+### Built With
+This project was built using these technologies.
+* Ruby
+* Rubocop
+* VsCode
 
 <!-- ABOUT THE PROJECT -->
-## Installation
+## Usage
 
 To play this game you need to:
 * have ruby installed in your computer
@@ -76,6 +87,13 @@ To play this game you need to:
     https://github.com/rammazzoti2000/tic-toc-toe.git
   ```
 * and execute bin/main.rb file using your terminal
+
+<!-- AUTOMATED TEST -->
+### Automated Test
+
+To run the test you need to cd into the tic-tac-toe diretory and run:
+
+```rspec spec/```
 
 ## Game Rules
 
@@ -129,15 +147,6 @@ To play this game you need to:
          vodka |  rum  |  rum  
       ```
 
-
-
-
-### Built With
-This project was built using these technologies.
-* Ruby
-* Rubocop
-* VsCode
-
 <!-- LIVE VERSION -->
 ## Live version
 
@@ -157,6 +166,16 @@ You can see it working [here](https://repl.it/@AlexandruBangau/tic-toc-toe)
 - LinkedIn: [Alexandru Bangau](https://www.linkedin.com/in/alexandru-bangau/)
 - GitHub: [@rammazzoti2000](https://github.com/rammazzoti2000)
 - E-mail: bangau.alexandru@gmail.com
+
+## :handshake: Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/rammazzoti2000/tic-toc-toe/issues).
+
+## Show your support
+
+Give a :star: if you like this project!
 
 
 <!-- ACKNOWLEDGEMENTS -->
