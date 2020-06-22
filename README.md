@@ -59,11 +59,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+This is the Microverse Tic-tak-toe project. In this project user can play game on the command line where two human players can play against each other and the board is displayed in between turns
+
 [![Product Name Screen Shot][product-screenshot]](https://repl.it/@AlexandruBangau/tic-toc-toe)
-
-This is the fifth project of the Microverse Ruby Module
-
-This is also the first project of the Odin Curriculum ([Ruby Programming - OOP](https://www.theodinproject.com/courses/ruby-programming/lessons/oop))
 
 
 ### Built With
@@ -160,6 +158,7 @@ You can see it working [here](https://repl.it/@AlexandruBangau/tic-toc-toe)
 - LinkedIn: [Jaspreet Singh](https://www.linkedin.com/in/jaspreet-singh-a28286146/) - 
 - GitHub: [@jaspreet-singh-sahota](https://github.com/jaspreet-singh-sahota)
 - E-mail: jaspreetsinghjassi01@gmail.com
+- [Portfolio](https://jaspreet-singh-portfolio.netlify.app/)
 
 👤 **Alexandru Bangau**
 
