@@ -59,7 +59,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is the Microverse Tic-tak-toe project. In this project user can play game on the command line where two human players can play against each other and the board is displayed in between turns
+This is the Microverse Tic-Tac-Toe project. In this project users can play game on the command line where two human players can play against each other and the board is displayed in between turns
 
 [![Product Name Screen Shot][product-screenshot]](https://repl.it/@AlexandruBangau/tic-toc-toe)
 
@@ -165,6 +165,7 @@ You can see it working [here](https://repl.it/@AlexandruBangau/tic-toc-toe)
 - LinkedIn: [Alexandru Bangau](https://www.linkedin.com/in/alexandru-bangau/)
 - GitHub: [@rammazzoti2000](https://github.com/rammazzoti2000)
 - E-mail: bangau.alexandru@gmail.com
+- Portfolio: [alex-portfolio.org](https://www.alex-portfolio.org/)
 
 ## :handshake: Contributing
 
