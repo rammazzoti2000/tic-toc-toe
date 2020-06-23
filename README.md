@@ -148,7 +148,7 @@ To run the test you need to cd into the tic-tac-toe diretory and run:
 <!-- LIVE VERSION -->
 ## Live version
 
-You can see it working [here](https://repl.it/@AlexandruBangau/tic-toc-toe)
+You can see it working [here](https://tic-toc-toe.rammazzoti2000.repl.run/)
 
 <!-- CONTACT -->
 ## Contributors
